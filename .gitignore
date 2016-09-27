@@ -1,0 +1,13 @@
+*.sln
+*.userprefs
+*.csproj
+*.pidb
+*.unityproj
+*.DS_Store
+*.hgignore
+*.suo
+/Assets/Scripts/UnityLib/.hg
+/Library/
+/obj
+/Temp
+/Builds
