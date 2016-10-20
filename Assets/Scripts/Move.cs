@@ -19,13 +19,11 @@ public class Move : MonoBehaviour
     private float vertical;
     private float horizontal;
     private Rigidbody2D body;
-    private float rotationY;
     private bool jump;
 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        body.fixedAngle = true;
 
         if (projectAxis == ProjectAxis.xAndY)
         {
@@ -115,5 +113,13 @@ public class Move : MonoBehaviour
         }
 
         if (horizontal > 0 && !isFacingRight) Flip(); else if (horizontal < 0 && isFacingRight) Flip();
+
+        var dist = (transform.position - Camera.main.transform.position).z;
+        var leftBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, dist)).x;
+        var rightBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, dist)).x;
+        var topBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, dist)).y;
+        var bottomBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, dist)).y;
+
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, leftBorder, rightBorder), Mathf.Clamp(transform.position.y, topBorder, bottomBorder), transform.position.z);
     }
 }
