@@ -47,7 +47,7 @@ public class MovePlane : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(direction * speed * Time.deltaTime);
+        transform.Translate(direction * speed * Time.deltaTime,Space.World);
         if (exitBorder.y == 0)
         {
             if (Mathf.Abs(transform.position.x + spriteRenderer.sprite.bounds.extents.x) > Mathf.Abs(exitBorder.x))
