@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MovePlane : MonoBehaviour
+public class MoveMan : MonoBehaviour
 {
     public float speed = 0.005f;
     public Vector2 direction = new Vector2(-1, 0);
@@ -47,7 +47,7 @@ public class MovePlane : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(direction * speed * Time.deltaTime,Space.World);
+        transform.Translate(direction * speed * Time.deltaTime, Space.World);
         /*if (exitBorder.y == 0)
         {
             if (Mathf.Abs(transform.position.x + spriteRenderer.sprite.bounds.extents.x) > Mathf.Abs(exitBorder.x))
@@ -59,5 +59,5 @@ public class MovePlane : MonoBehaviour
                 Destroy(gameObject);
         }*/
         Destroy(gameObject, 120);
-    }    
+    }
 }

@@ -2,7 +2,7 @@
 
 public class Man : MonoBehaviour
 {
-  void Start()
-  {
-  }
+    void Start()
+    {
+    }
 }

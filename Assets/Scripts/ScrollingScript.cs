@@ -113,7 +113,7 @@ public class ScrollingScript : MonoBehaviour
                     //ƒобавление нового фона в тот момент когда последний перескает входную границу эрана своей нижней стороной
                     if (lastBackGround.position.y - spriteRendererLastBackGround.sprite.bounds.extents.y > entryBorder.y)
                     {
-                        float y = lastBackGround.position.y - spriteRendererLastBackGround.sprite.bounds.extents.y- backGroundPrefab[0].GetComponent<SpriteRenderer>().sprite.bounds.extents.y;
+                        float y = lastBackGround.position.y - spriteRendererLastBackGround.sprite.bounds.extents.y - backGroundPrefab[0].GetComponent<SpriteRenderer>().sprite.bounds.extents.y;
                         int index = Random.Range(0, backGroundPrefab.Count);
                         Vector3 startPos = new Vector3(lastBackGround.position.x, y, lastBackGround.position.z);
                         GameObject initObj = (GameObject)Instantiate(backGroundPrefab[index], startPos, backGroundPrefab[index].transform.rotation);
@@ -163,6 +163,6 @@ public class ScrollingScript : MonoBehaviour
             background.Translate(movement);
         }
 
-     
+
     }
 }
