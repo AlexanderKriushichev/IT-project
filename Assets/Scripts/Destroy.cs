@@ -12,7 +12,7 @@ public class Destroy : MonoBehaviour
         if (man != null)
         {
             score += 100;
-            text.text ="Score: "+ score.ToString();
+            text.text = "Score: " + score.ToString();
             Destroy(man.gameObject);
         }
     }
