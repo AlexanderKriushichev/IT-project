@@ -15,12 +15,7 @@ public class Generator : MonoBehaviour
 	{
 		StartCoroutine(SpawnEnemies());
 	}
-
-	void Update()
-	{
-
-	}
-
+	
 	IEnumerator SpawnEnemies()
 	{
 		yield return new WaitForSeconds(startWait);

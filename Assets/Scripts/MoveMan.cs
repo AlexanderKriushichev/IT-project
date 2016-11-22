@@ -48,16 +48,5 @@ public class MoveMan : MonoBehaviour
     void Update()
     {
         transform.Translate(direction * speed * Time.deltaTime, Space.World);
-        /*if (exitBorder.y == 0)
-        {
-            if (Mathf.Abs(transform.position.x + spriteRenderer.sprite.bounds.extents.x) > Mathf.Abs(exitBorder.x))
-                Destroy(gameObject);
-        }
-        else
-        {
-            if (Mathf.Abs(transform.position.y + spriteRenderer.sprite.bounds.extents.y) > Mathf.Abs(exitBorder.y))
-                Destroy(gameObject);
-        }*/
-        Destroy(gameObject, 120);
     }
 }
