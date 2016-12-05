@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class HealthScript : MonoBehaviour
 {
-	public float hp = 1;
+	public static float hp = 1;
 	public Image lifes;
 	public float CountDamage = 0.1f;
 	private float maxHP;

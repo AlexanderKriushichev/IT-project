@@ -14,6 +14,10 @@ public class Destroy : MonoBehaviour
             score += 100;
             text.text = "Score: " + score.ToString();
             Destroy(man.gameObject);
+            if (score == 500)
+            {
+                HealthScript.hp = 1;
+            }
         }
     }
 }
