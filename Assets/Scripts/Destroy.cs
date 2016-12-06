@@ -5,6 +5,7 @@ public class Destroy : MonoBehaviour
 {
     public Text text;
     public float score = 0;
+    public int CountManForBonus = 5;
 
     void OnTriggerEnter2D(Collider2D otherCollider)
     {
@@ -12,11 +13,17 @@ public class Destroy : MonoBehaviour
         if (man != null)
         {
             score += 100;
-            text.text = "Score: " + score.ToString();
             Destroy(man.gameObject);
-            if (score == 500)
+            if (score % (CountManForBonus * 100) == 0)
             {
-                HealthScript.hp = 1;
+                GetComponent<HealthScript>().hp = 1;
+                GetComponent<HealthScript>().lifes.fillAmount = 1;
+                score -= CountManForBonus * 100;
+                text.text = "Score: " + score.ToString();
+            }
+            else
+            {
+                text.text = "Score: " + score.ToString();
             }
         }
     }
